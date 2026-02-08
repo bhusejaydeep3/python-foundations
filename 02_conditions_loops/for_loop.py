@@ -1,27 +1,38 @@
+'''for loop explanation:
+A for loop is used when we want to repeat an action a fixed number 
+of times. 
 
-FOR LOOP — Simple Explanation
+range (1, 6) generates numbers from 1 to 5.
+the loop runs once for each number.
+each time it runs the current value is printed.'''
 
-A for loop is used when we know:
-- how many times we want to repeat an action
+for i in range (1, 6):
+    print(i) 
 
-Here:
-range(1, 6) generates numbers from 1 to 5.
-The loop runs once for each number.
+#example 2
 
+#Step 1: Create an empty list
 
-# range(start, end) → end is not included
-for i in range(1, 6):
-    # i takes one value at a time: 1 → 2 → 3 → 4 → 5
-    print(i)   # prints current value of i
+numbers = [] 
 
 
-example 2 
+#Step 2: First for loop – filling the list
+for i in range(1, 11):
+    numbers.append(i)  
 
-n = int(input("Enter a number: "))
-
+#Step 3: Prepare to calculate sum
 total = 0
 
-for i in range(1, n + 1):
-    total = total + i
+#Step 4: Second for loop – calculating sum
+for num in numbers:
+ total += num
 
+#Step 5: Calculate average
+average = total / len(numbers)
+
+print("Numbers:", numbers)
 print("Sum:", total)
+print("Average:", average)
+
+
+
