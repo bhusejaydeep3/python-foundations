@@ -1,0 +1,27 @@
+## Encapsulation 
+
+class bankacc:
+  def __init__(self,balance):
+    self.__balance = balance
+
+  def deposite(self,amount):
+   self.__balance += amount
+   print(f"{amount} is added.new balance:{self.__balance}")
+
+  def withdraw(self,amount):
+   if amount > self.__balance:
+     print("not enough!")
+   else:
+    self.__balance -= amount
+    print(f"{amount} withdrawn.new balance: {self.__balance}")
+
+  def __display(self):
+      print(f"Current balance: {self.__balance}")
+  def show(self):
+    self.__display()
+
+
+acc = bankacc(5000)
+acc.deposite(10000)
+
+acc.show()
