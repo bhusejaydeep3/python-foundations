@@ -1,9 +1,15 @@
  class bankacc ():
  def __init__(self,balance):
   self.__balance = balance 
-  def deposite(self,balance,amount):
+  def deposite(self,amount):
   self.__balance = 0 
    self.__balance += amount 
     print("amount deposited)
- def 
-  
+ def withdraw(self,amount)
+  if self.__balance <= amount:
+   print("not enough balance")
+  else:
+    self.__balance -= amount 
+   print("withdrwal successful")
+ def show(self):
+ display self.__balance
