@@ -1,0 +1,57 @@
+from abc import ABC, abstractmethod
+
+class Weapon(ABC):
+    @abstractmethod
+    def attack(self):
+        pass
+
+class Sword(Weapon):
+    def attack(self):
+        print("Swosh..swosh")
+
+class Gun(Weapon):
+    def attack(self):
+        print("Trrrrrrr")
+
+class Bow(Weapon):
+    def attack(self):
+        print("Thwip")
+
+class MagicWand(Weapon):
+    def attack(self):
+        print("Expecto Patronum")
+
+class Player():
+    def __init__(self, name, weapon):
+        self.__name = name          # private = encapsulation
+        self.__weapon = weapon      # private = encapsulation
+
+    def get_name(self):             # getter
+        return self.__name
+
+    def get_weapon(self):           # getter
+        return self.__weapon
+
+    def set_weapon(self, weapon):   # setter — controlled way to change weapon
+        self.__weapon = weapon
+        print(f"{self.__name} switched weapons!")
+
+    def use_weapon(self):
+        print(f"{self.__name} attacks: ", end="")
+        self.__weapon.attack()
+
+
+# Objects
+s = Sword()
+g = Gun()
+b = Bow()
+m = MagicWand()
+
+p1 = Player("Jaydeep", s)
+p1.use_weapon()
+
+p1.set_weapon(g)       # proper way to switch — via setter
+p1.use_weapon()
+
+p1.set_weapon(m)
+p1.use_weapon()
